@@ -1,6 +1,6 @@
 # Routing discovery
 
-A [labdex](https://github.com/reykimedev/labdex) plugin. Read-only. BGP neighbours and the routing table of a router (OPNsense with FRR, or Cisco IOS-XE over RESTCONF), compared with the networks in the inventory: routed prefixes labdex doesn't know, inventory networks the router has no route for, and neighbours that aren't established.
+A [labdex](https://github.com/labdex-app/labdex) plugin. Read-only. BGP neighbours and the routing table of a router (OPNsense with FRR, or Cisco IOS-XE over RESTCONF), compared with the networks in the inventory: routed prefixes labdex doesn't know, inventory networks the router has no route for, and neighbours that aren't established.
 
 **Version** 1.0 · **Works with** labdex >=1.3,<2 · **Plugin id** `routing`
 
