@@ -1,0 +1,22 @@
+id: routing
+name: Routing discovery
+kind: integration
+tags: [network, routing, bgp, discovery]
+version: "1.0"
+labdex: ">=1.3,<2"
+description: "Read-only. BGP neighbours and the routing table of a router (OPNsense with FRR, or Cisco IOS-XE over RESTCONF), compared with the networks in the inventory: routed prefixes labdex doesn't know, inventory networks the router has no route for, and neighbours that aren't established."
+pages:
+  - {id: routes, label: Routing}
+settings:
+  - {key: source, label: Router, type: select, default: opnsense_frr, options: [opnsense_frr, cisco_restconf]}
+  - {key: url, label: URL, type: string, required: true, placeholder: "https://fw.lab.example.net", help: "OPNsense web UI, or the IOS-XE device (https://router)"}
+  - {key: username, label: API key / user name, type: string, required: true, help: "OPNsense: the API key (needs Diagnostics: FRR). IOS-XE: a privilege-15 user with RESTCONF enabled"}
+  - {key: password, label: API secret / password, type: secret, required: true}
+  - {key: verify_tls, label: Check the TLS certificate, type: bool, default: true}
+  - {key: host_routes, label: Count /32 and /128 routes as networks, type: bool, default: false}
+  - {key: ignore, label: Ignore prefixes, type: list, help: "CIDRs that are fine without an inventory network, e.g. the tailnet or a provider's transfer net"}
+actions:
+  - {id: test, label: Check connection, mode: run}
+  - {id: read, label: Read routes and neighbours, mode: run, schedulable: true, schedule_default: 15}
+widgets:
+  - {id: neighbours, label: BGP neighbours, where: dashboard}
