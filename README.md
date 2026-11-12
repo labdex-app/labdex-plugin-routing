@@ -1,5 +1,7 @@
 # Routing discovery
 
+[![Release](https://github.com/labdex-app/labdex-plugin-routing/actions/workflows/release.yml/badge.svg)](https://github.com/labdex-app/labdex-plugin-routing/actions/workflows/release.yml) [![Buy Me a Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-bitsandbricks-7c3aed?logo=buymeacoffee&logoColor=white&labelColor=181b20)](https://buymeacoffee.com/bitsandbricks)
+
 A [labdex](https://github.com/labdex-app/labdex) plugin. Read-only. BGP neighbours and the routing table of a router (OPNsense with FRR, or Cisco IOS-XE over RESTCONF), compared with the networks in the inventory: routed prefixes labdex doesn't know, inventory networks the router has no route for, and neighbours that aren't established.
 
 **Version** 1.0 · **Works with** labdex >=1.3,<2 · **Plugin id** `routing`
